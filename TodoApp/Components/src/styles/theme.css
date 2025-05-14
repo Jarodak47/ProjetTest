@@ -1,0 +1,322 @@
+/* Styles de base pour le conteneur racine */
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Styles pour le formulaire de tâches
+-------------------------------------------------- */
+.todo-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  /* Espacement entre les groupes de champs */
+  .todo-form .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Style des labels */
+  .todo-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  
+  /* Styles communs pour les champs de saisie */
+  .todo-form input[type="text"],
+  .todo-form input[type="date"],
+  .todo-form textarea,
+  .todo-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+  }
+  
+  /* État focus des champs */
+  .todo-form input:focus,
+  .todo-form textarea:focus,
+  .todo-form select:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+  
+  /* Style du bouton principal */
+  .todo-form .btn-primary {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  /* Hover du bouton principal */
+  .todo-form .btn-primary:hover {
+    background: #1d4ed8;
+  }
+
+
+  /* Styles pour les éléments de la liste de tâches
+  -------------------------------------------------- */
+  .todo-item {
+    background: #f3f4f6;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s;
+  }
+  
+  /* En-tête de l'élément tâche */
+  .todo-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Titre de la tâche */
+  .todo-item-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #1e293b;
+  }
+  
+  /* Conteneur des boutons d'action */
+  .todo-item-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Style de la case à cocher */
+  .todo-checkbox {
+    margin-right: 0.7rem;
+    accent-color: #2563eb;
+  }
+  
+  /* Styles communs pour les boutons d'action */
+  .edit-btn, .delete-btn {
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  /* Bouton d'édition */
+  .edit-btn {
+    background: #fbbf24;
+    color: #fff;
+  }
+  
+  .edit-btn:hover {
+    background: #f59e42;
+  }
+  
+  /* Bouton de suppression */
+  .delete-btn {
+    background: #ef4444;
+    color: #fff;
+  }
+  
+  .delete-btn:hover {
+    background: #dc2626;
+  }
+  
+  /* Section des détails de la tâche */
+  .todo-item-details {
+    margin-top: 0.7rem;
+  }
+  
+  /* Description de la tâche */
+  .todo-item-details .description {
+    margin: 0 0 0.5rem 0;
+    color: #334155;
+  }
+  
+  /* Conteneur des métadonnées */
+  .todo-item-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Styles des indicateurs de statut */
+  .status {
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  /* Couleurs des différents statuts */
+  .status.pending { background: #fbbf24; }
+  .status.in-progress { background: #2563eb; }
+  .status.completed { background: #22c55e; }
+  
+  /* Couleurs des niveaux de priorité */
+  .priority.low { color: #2563eb; }
+  .priority.medium { color: #fbbf24; }
+  .priority.high { color: #ef4444; }
+  
+  /* Style des dates */
+  .created-at, .update-at, .due-date {
+    color: #64748b;
+  }
+
+  /* Styles du conteneur principal de la liste
+  -------------------------------------------------- */
+  .todo-list-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem;
+  }
+  
+  /* Reset de la liste */
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styles de la pagination
+  -------------------------------------------------- */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+  
+  /* Boutons de pagination */
+  .pagination-button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  /* État désactivé des boutons de pagination */
+  .pagination-button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+  }
+  
+  /* Indicateur de page */
+  .pagination-info {
+    font-weight: 500;
+    color: #334155;
+  }
+
+  /* Filtres par statut pour la TodoList */
+  .status-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-button {
+    background: #e0e7ef;
+    color: #334155;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .filter-button.all {
+    background: #2563eb;
+    color: #fff;
+  }
+  .filter-button.completed {
+    background: #22c55e;
+    color: #fff;
+  }
+  .filter-button.pending {
+    background: #fbbf24;
+    color: #fff;
+  }
+
+  .filter-button:hover {
+    filter: brightness(0.95);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  }
+
+/* Styles pour le composant App (navigation principale) */
+.app-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.todo-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.todo-nav button {
+  background: #e0e7ef;
+  color: #334155;
+  border: none;
+  padding: 0.7rem 1.7rem;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.todo-nav button.active,
+.todo-nav button:focus {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+}
+
+.todo-nav button:hover {
+  filter: brightness(0.97);
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .todo-nav {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
