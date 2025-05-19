@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "Créer un composant TodoList",
+      "description": "Implémenter l'affichage des tâches",
+      "status": "completed",
+      "priority": "medium",
+      "dueDate": "2025-06-15",
+      "createdAt": "2025-05-18T09:00:00.000Z",
+      "updatedAt": "2025-05-19T12:54:45.618Z",
+      "id": "2"
+    },
+    {
+      "title": "Ajouter la pagination",
+      "description": "Paginer la liste des tâches",
+      "status": "completed",
+      "priority": "low",
+      "dueDate": "2025-06-30",
+      "createdAt": "2025-05-19T14:00:00.000Z",
+      "updatedAt": "2025-05-19T11:35:57.133Z",
+      "id": "3"
+    }
+  ]
+}
