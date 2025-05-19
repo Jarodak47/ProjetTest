@@ -15,7 +15,6 @@ import '../styles/theme.css';
  * @param {Function} props.onSubmit - Fonction appelée lors de la soumission du formulaire
  */
 function TodoForm({ todo , onSubmit }) {
-  console.log({todo})
   return (
     <form className="todo-form" onSubmit={onSubmit}>
       {/* Champ pour le titre de la tâche */}

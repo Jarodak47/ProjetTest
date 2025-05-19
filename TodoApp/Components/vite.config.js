@@ -12,6 +12,7 @@ export default defineConfig({
         './TodoItem': './src/components/TodoItem.jsx',
         './TodoList': './src/components/TodoList.jsx',
         './TodoForm': './src/components/TodoForm.jsx',
+        './theme': './src/styles/theme.css',
       },
       // dépendances partagées entre les micro-frontends
       shared: ['react', 'react-dom']

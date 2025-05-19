@@ -13,8 +13,8 @@
 
 # Captures d'écran des principaux composants de l'application
 
-![Aperçu des composants](src/assets/tasklist.png)
-![Aperçu du formulaire](src/assets/todoform.png)
+![Aperçu des composants](src/images/tasklist.png)
+![Aperçu du formulaire](src/images/todoform.png)
 
 > *(Ajoutez ici une capture d’écran des composants, par exemple la TodoList ou le formulaire)*
 

@@ -4,11 +4,83 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-}
-
-/* Styles pour le formulaire de tâches
--------------------------------------------------- */
-.todo-form {
+  }
+  
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  
+  a:hover {
+    color: #535bf2;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+  
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  
+  button:hover {
+    border-color: #646cff;
+  }
+  
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  /* Styles pour le formulaire de tâches
+  -------------------------------------------------- */
+  .todo-form {
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
@@ -67,8 +139,7 @@
   .todo-form .btn-primary:hover {
     background: #1d4ed8;
   }
-
-
+  
   /* Styles pour les éléments de la liste de tâches
   -------------------------------------------------- */
   .todo-item {
@@ -109,7 +180,8 @@
   }
   
   /* Styles communs pour les boutons d'action */
-  .edit-btn, .delete-btn {
+  .edit-btn,
+  .delete-btn {
     border: none;
     padding: 0.4rem 0.9rem;
     border-radius: 4px;
@@ -166,20 +238,38 @@
   }
   
   /* Couleurs des différents statuts */
-  .status.pending { background: #fbbf24; }
-  .status.in-progress { background: #2563eb; }
-  .status.completed { background: #22c55e; }
+  .status.pending {
+    background: #fbbf24;
+  }
+  
+  .status.in-progress {
+    background: #2563eb;
+  }
+  
+  .status.completed {
+    background: #22c55e;
+  }
   
   /* Couleurs des niveaux de priorité */
-  .priority.low { color: #2563eb; }
-  .priority.medium { color: #fbbf24; }
-  .priority.high { color: #ef4444; }
+  .priority.low {
+    color: #2563eb;
+  }
+  
+  .priority.medium {
+    color: #fbbf24;
+  }
+  
+  .priority.high {
+    color: #ef4444;
+  }
   
   /* Style des dates */
-  .created-at, .update-at, .due-date {
+  .created-at,
+  .update-at,
+  .due-date {
     color: #64748b;
   }
-
+  
   /* Styles du conteneur principal de la liste
   -------------------------------------------------- */
   .todo-list-container {
@@ -231,7 +321,7 @@
     font-weight: 500;
     color: #334155;
   }
-
+  
   /* Filtres par statut pour la TodoList */
   .status-filters {
     display: flex;
@@ -239,7 +329,7 @@
     gap: 1rem;
     margin-bottom: 1.5rem;
   }
-
+  
   .filter-button {
     background: #e0e7ef;
     color: #334155;
@@ -250,73 +340,75 @@
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
   }
-
+  
   .filter-button.all {
     background: #2563eb;
     color: #fff;
   }
+  
   .filter-button.completed {
     background: #22c55e;
     color: #fff;
   }
+  
   .filter-button.pending {
     background: #fbbf24;
     color: #fff;
   }
-
+  
   .filter-button:hover {
     filter: brightness(0.95);
     box-shadow: 0 2px 8px rgba(37,99,235,0.08);
   }
-
-/* Styles pour le composant App (navigation principale) */
-.app-container {
-  max-width: 600px;
-  margin: 3rem auto;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 2.5rem 2rem 2rem 2rem;
-  text-align: center;
-}
-
-.todo-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.todo-nav button {
-  background: #e0e7ef;
-  color: #334155;
-  border: none;
-  padding: 0.7rem 1.7rem;
-  border-radius: 6px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  outline: none;
-}
-
-.todo-nav button.active,
-.todo-nav button:focus {
-  background: #2563eb;
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.10);
-}
-
-.todo-nav button:hover {
-  filter: brightness(0.97);
-}
-
-@media (max-width: 600px) {
+  
+  /* Styles pour le composant App (navigation principale) */
   .app-container {
-    padding: 1.2rem 0.5rem;
+    max-width: 600px;
+    margin: 3rem auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    text-align: center;
   }
+  
   .todo-nav {
-    flex-direction: column;
-    gap: 0.7rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
-}
+  
+  .todo-nav button {
+    background: #e0e7ef;
+    color: #334155;
+    border: none;
+    padding: 0.7rem 1.7rem;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  
+  .todo-nav button.active,
+  .todo-nav button:focus {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+  }
+  
+  .todo-nav button:hover {
+    filter: brightness(0.97);
+  }
+  
+  @media (max-width: 600px) {
+    .app-container {
+      padding: 1.2rem 0.5rem;
+    }
+    .todo-nav {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+  }
