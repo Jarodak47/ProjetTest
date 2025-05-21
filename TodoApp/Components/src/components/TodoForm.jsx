@@ -78,13 +78,14 @@ function TodoForm({ todo , onSubmit }) {
           id="dueDate"
           name="dueDate"
           defaultValue={todo?.dueDate || ''}
+          required
           min={new Date().toISOString().split('T')[0]}
         />
       </div>
       {/* Bouton de soumission qui s'adapte au contexte (création/modification) */}
       <button type="submit" className="btn-primary">
         {(!todo || Object.keys(todo).length === 0 )? 'Ajouter' : 'Modifier'} la tâche
-      </button>
+      </button >
     </form>
   );
 }

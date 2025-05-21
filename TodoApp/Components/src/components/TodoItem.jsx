@@ -44,7 +44,7 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
           />
 
           {/* Boutons d'action pour modifier et supprimer la tâche */}
-          <button onClick={() => onEdit(todo)} className="edit-btn">Modifier</button>
+          <button onClick={() => onEdit(todo)} className="edit-btn" disabled = {todo.status ==="completed"}>Modifier</button>
           <button onClick={() => onDelete(todo.id)} className="delete-btn">Supprimer</button>
         </div>
       </div>

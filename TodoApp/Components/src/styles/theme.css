@@ -200,6 +200,11 @@
     background: #f59e42;
   }
   
+  .edit-btn:disabled {
+    background: #e5e7eb;
+    cursor: not-allowed;
+  }
+  
   /* Bouton de suppression */
   .delete-btn {
     background: #ef4444;

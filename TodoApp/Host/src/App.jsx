@@ -30,22 +30,26 @@ function App() {
   const [deleteTodo] = useDeleteTodoMutation()
   const [toggleTodo] = useToggleTodoMutation()
 
-  // (Optionnel) Si tu souhaites utiliser l'état local (todoSlice) au lieu de l'API, utilise filteredTodos.
-  // const todos = filteredTodos
-
-  // (Optionnel) Si tu souhaites utiliser l'état issu de l'API, utilise apiTodos.
   const todos = apiTodos || []
   
-  const handleAdd = async (newTodo) => {
-    // console.log({newTodo})
+  const handleAdd = async (e) => {
+    e.preventDefault();
+
+    // Récupérer les valeurs du formulaire
+    // const formData = new FormData(e.target);
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+  
+
+    console.log('Données reçues du formulaire:', data);
+
     try {
-      // (1) Appel de la mutation (RTK Query) pour ajouter la tâche (POST /api)
-      const result = await addTodo(newTodo).unwrap()
-      // (2) (Optionnel) Si tu souhaites basculer vers la vue liste après l'ajout, décommente la ligne suivante :
-      // dispatch(setView('list'))
-      console.log("Tâche ajoutée avec succès:", result)
+      const result = await addTodo({ ...data }).unwrap();
+      console.log("Tâche ajoutée avec succès:", result);
+      dispatch(setView('list'));
     } catch (error) {
-      console.error("Erreur lors de l'ajout:", error)
+      console.error("Erreur lors de l'ajout:", error);
     }
   }
 
@@ -53,18 +57,25 @@ function App() {
     dispatch(setTodoToEdit(todo));
   }
   
-  const handleEdit = async (todoToEdit) => {
-    console.log({todoToEdit})
+  const handleEdit = async (e) => {
+    e.preventDefault();
+    // Récupérer les valeurs du formulaire
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
     try {
-      const { id, ...rest } = todoToEdit;
-      const result = await updateTodo({ id, ...rest }).unwrap();
-
-      console.log("✅ Tâche modifiée avec succès :", result);
+      if (todoToEdit) {
+        const { id } = todoToEdit;
+        const result = await updateTodo({ id, ...data }).unwrap();
+        console.log("✅ Tâche modifiée avec succès :", result);
+        dispatch(setTodoToEdit(null));
+        // dispatch(setView('list'));
+      }
     } catch (error) {
       console.error("❌ Erreur lors de la modification :", error);
     }
-  };
-  
+  }
+
 
   const handleToggle = async (id) => {
     try {
