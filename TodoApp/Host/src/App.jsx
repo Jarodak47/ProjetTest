@@ -113,7 +113,6 @@ function App() {
   }
 
   return (
-    <Provider value={store}>
     <Suspense fallback={<div>Chargement des composants...</div>}>
       <div className="app-container">
         <h1>Application de Gestion de Tâches</h1>
@@ -146,7 +145,6 @@ function App() {
         {currentView === 'edit' && <TodoForm todo={todoToEdit} onSubmit={handleEdit} />}
       </div>
     </Suspense>
-    </Provider>
   )
 }
 
