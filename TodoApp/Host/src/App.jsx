@@ -4,8 +4,8 @@
  * Ce composant gère la navigation entre la liste des tâches et le formulaire d'ajout.
  */
 
-import { Suspense, lazy} from 'react'
-import { useSelector, useDispatch, Provider,useStore } from 'react-redux'
+import { Suspense, lazy } from 'react'
+import { useSelector, useDispatch, Provider } from 'react-redux'
 import { useGetTodosQuery, useAddTodoMutation, useUpdateTodoMutation, useDeleteTodoMutation, useToggleTodoMutation } from './store/todoApi'
 import { setView, setTodoToEdit, onStatusFilter } from './store/todoSlice'
 
@@ -19,7 +19,6 @@ const TodoList = lazy(() => import('components/TodoList'))
  */
 function App() {
   const dispatch = useDispatch()
-  const store = useStore()
   const currentView = useSelector((state) => state.todos.currentView)
   const statusFilter = useSelector((state) => state.todos.statusFilter)
   const todoToEdit = useSelector((state) => state.todos.todoToEdit)
